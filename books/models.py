@@ -16,6 +16,13 @@ from django.db import models
 class BookInfo(models.Model):
     name = models.CharField(max_length=60)
     author = models.CharField(max_length=50)
-    age = models.IntegerField()
     pub_date = models.TimeField()
     price = models.IntegerField()
+
+
+class HeroInfo(models.Model):
+    name = models.CharField(max_length=60)
+    gender = models.IntegerField(default=1)
+    skill = models.CharField(max_length=60, null=True)
+    book_id = models.ForeignKey(BookInfo, on_delete=models.CASCADE)  # 外键
+
