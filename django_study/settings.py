@@ -56,7 +56,7 @@ ROOT_URLCONF = 'django_study.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [],  # 配置模板文件位置
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

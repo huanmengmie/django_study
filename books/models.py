@@ -16,8 +16,11 @@ from django.db import models
 class BookInfo(models.Model):
     name = models.CharField(max_length=60)
     author = models.CharField(max_length=50)
-    pub_date = models.TimeField()
+    pub_date = models.DateTimeField(auto_now_add=True)
     price = models.IntegerField()
+
+    def __str__(self):
+        return self.name
 
 
 class HeroInfo(models.Model):
@@ -25,4 +28,7 @@ class HeroInfo(models.Model):
     gender = models.IntegerField(default=1)
     skill = models.CharField(max_length=60, null=True)
     book_id = models.ForeignKey(BookInfo, on_delete=models.CASCADE)  # 外键
+
+    def __str__(self):
+        return self.name
 
