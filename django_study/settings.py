@@ -56,8 +56,8 @@ ROOT_URLCONF = 'django_study.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # 配置模板文件位置
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # 配置模板文件位置
+        'APP_DIRS': True,  # django将在每个app中查找templates文件夹中的内容
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
